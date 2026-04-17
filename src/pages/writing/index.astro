@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import PostCard from '../../components/PostCard.astro';
+---
+
+<Base
+  title="Writing"
+  description="Essays on modernization, transformation, and the human side of organizational change — by Bethany J. Curran."
+>
+  <Nav />
+
+  <main class="flex-1">
+    <header class="max-w-3xl mx-auto px-6 pt-20 pb-16">
+      <p class="section-label mb-4">All writing</p>
+      <h1 class="font-display text-5xl md:text-6xl text-navy font-light leading-tight mb-6">
+        The essays
+      </h1>
+      <p class="font-body text-lg text-charcoal/60 leading-relaxed max-w-xl">
+        On modernization, layoffs, legacy systems, and the humans navigating all three.
+        Also published on <a href="https://substack.com" target="_blank" rel="noopener noreferrer" class="text-terracotta hover:text-navy transition-colors">Substack</a>.
+      </p>
+    </header>
+
+    <div class="max-w-3xl mx-auto px-6 pb-24 space-y-0">
+      <PostCard
+        title="The Foreseen Ghost"
+        subtitle="Laid Off by Design"
+        slug="the-foreseen-ghost"
+        date="April 2026"
+        readTime="8 min read"
+        excerpt="The second time the ghost came for me, I knew it was over my shoulder. What happens when you engineer your own exit — and the measure of success is no longer being needed?"
+      />
+      <PostCard
+        title="The Unforeseen Ghost"
+        subtitle="An Evolution of Layoffs"
+        slug="the-unforeseen-ghost"
+        date="April 2026"
+        readTime="10 min read"
+        excerpt="In generations before us, being laid off was a dig at our egos. For millennials in 2026, the ghost is familiar — but we still weren't ready for the reality of living with it."
+      />
+    </div>
+  </main>
+
+  <Footer />
+</Base>

@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="About"
+  description="Bethany J. Curran is a modernization and transformation leader who builds frameworks, rewrites job descriptions, and solves problems no one has named yet."
+>
+  <Nav />
+
+  <main class="flex-1">
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="section-label mb-4">About</p>
+          <h1 class="font-display text-5xl md:text-6xl text-navy font-light leading-tight mb-6">
+            Bethany J. Curran
+          </h1>
+          <p class="font-display text-2xl text-charcoal/60 italic mb-8">
+            I accidentally fell into modernization<br/>by solving problems no one else had named.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/bethanyjcurran/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Connect on LinkedIn
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-3 -right-3 w-36 h-36 rounded-full border border-sage/30"></div>
+          <div class="absolute -bottom-4 -left-4 w-24 h-24 rounded-full bg-mustard/15"></div>
+          <img
+            src="/headshot.jpg"
+            alt="Bethany J. Curran"
+            class="relative z-10 w-full max-w-sm mx-auto md:ml-auto object-cover aspect-square rounded-sm shadow-lg"
+          />
+          <div class="absolute bottom-0 left-0 w-1 h-2/3 bg-terracotta rounded-sm -translate-x-3 z-10"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Impact stats bar -->
+    <div class="bg-navy">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { value: '35%', label: 'Profit increase', sub: '$300K MRR service, 9 months' },
+            { value: '3×',  label: 'Roles written', sub: 'from scratch, for unnamed problems' },
+            { value: '2.5yr', label: 'Portfolio transformation', sub: 'end-to-end modernization' },
+            { value: '10+', label: 'Years', sub: 'in systems modernization & leadership' },
+          ].map((stat, i) => (
+            <div class={i > 0 ? 'md:border-l md:border-cream/10 md:pl-8' : ''}>
+              <p class="font-display text-4xl font-light text-mustard mb-1">{stat.value}</p>
+              <p class="font-body text-sm text-cream font-medium mb-0.5">{stat.label}</p>
+              <p class="font-body text-xs text-cream/50">{stat.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Story -->
+    <section class="max-w-3xl mx-auto px-6 py-20">
+      <div class="prose prose-oia max-w-none">
+        <p class="section-label not-prose mb-6">The story</p>
+
+        <p>
+          I didn't set out to be a modernization leader. I set out to solve the problem in front of me —
+          and kept doing it until I'd done it enough times that someone finally had a name for it.
+        </p>
+
+        <p>
+          Three times in my career, I've walked into an organization with an ill-defined problem,
+          sat in the work long enough to understand it, and written a job description that didn't exist
+          before I got there. That's not a tactic. It's just what happens when you pay closer attention
+          to what's broken than to what your title says.
+        </p>
+
+        <p>
+          Most recently, I spent two and a half years modernizing an entire portfolio of technology services
+          at a large MSP. I built a framework to fully map and address technical debt — then applied it to
+          a $300K monthly recurring revenue service, producing a 35% profit increase in nine months.
+          Then I applied the same methodology to the smaller services. Then the largest.
+        </p>
+
+        <p>
+          My measure of success was the day my teams stopped needing me. I took a week off for my birthday,
+          didn't check my phone once, and came back to silence. The sky didn't fall.
+          That was the signal. My assignment was complete.
+        </p>
+
+        <p>
+          My approach to modernization isn't primarily technical. It's organizational. Legacy systems become
+          legacy because of how humans made decisions over time — the shortcuts, the incentives, the things
+          no one wrote down. You can't fix the system without understanding the humans inside it.
+          And you can't lead the humans through change without earning their trust first.
+        </p>
+
+        <p>
+          I'm currently exploring what that next problem looks like — and whose organization I'll help
+          modernize next. If yours has a problem that doesn't have a job title yet, I'd like to hear about it.
+        </p>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="bg-cream-dark/50 border-t border-b border-cream-dark">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <p class="section-label mb-10">Areas of expertise</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { title: 'Technical Debt Mapping', body: 'Building frameworks that make invisible debt visible — across tooling, processes, and systems.' },
+            { title: 'Services Modernization', body: 'End-to-end portfolio transformation: architecture, workflow, team, and metrics.' },
+            { title: 'Change Leadership', body: 'Guiding teams through transitions they don\'t see coming — and making it stick.' },
+            { title: 'Organizational Design', body: 'Identifying roles that don\'t exist yet and building the structure around them.' },
+            { title: 'MSP & Services Operations', body: 'Deep background in managed services: recurring revenue, SLAs, client relationships.' },
+            { title: 'Engineering Leadership', body: 'Hiring, developing, and growing engineering teams through periods of significant change.' },
+          ].map(item => (
+            <div class="bg-cream p-6 border border-cream-dark">
+              <div class="w-6 h-0.5 bg-terracotta mb-4"></div>
+              <h3 class="font-body text-sm font-semibold tracking-wide uppercase text-navy mb-3">{item.title}</h3>
+              <p class="font-body text-sm text-charcoal/60 leading-relaxed">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+      <p class="font-display text-3xl text-navy font-light mb-6">
+        Looking for someone who operates well in ambiguity?
+      </p>
+      <a
+        href="https://www.linkedin.com/in/bethanyjcurran/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        Let's connect
+      </a>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

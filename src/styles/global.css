@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-cream text-charcoal font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    @apply bg-terracotta text-cream;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply font-body text-sm tracking-widest uppercase text-charcoal/70 hover:text-terracotta transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-navy text-cream font-body text-sm tracking-widest uppercase px-8 py-3 hover:bg-navy-light transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-navy text-navy font-body text-sm tracking-widest uppercase px-8 py-3 hover:bg-navy hover:text-cream transition-colors duration-200;
+  }
+
+  .section-label {
+    @apply font-body text-xs tracking-[0.25em] uppercase text-terracotta;
+  }
+
+  .divider-geo {
+    @apply flex items-center gap-4 my-12;
+  }
+
+  .divider-geo::before,
+  .divider-geo::after {
+    @apply content-[''] flex-1 h-px bg-cream-dark;
+  }
+}

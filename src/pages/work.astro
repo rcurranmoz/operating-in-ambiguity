@@ -1,0 +1,181 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="Work"
+  description="Case studies and portfolio work from Bethany J. Curran — systems modernization, technical debt frameworks, and transformation leadership."
+>
+  <Nav />
+
+  <main class="flex-1">
+    <header class="max-w-3xl mx-auto px-6 pt-20 pb-16">
+      <p class="section-label mb-4">Case studies</p>
+      <h1 class="font-display text-5xl md:text-6xl text-navy font-light leading-tight mb-6">
+        The work
+      </h1>
+      <p class="font-body text-lg text-charcoal/60 leading-relaxed max-w-xl">
+        Tangible results from intangible problems. Here's what modernization looks like
+        when it actually works.
+      </p>
+    </header>
+
+    <!-- Featured case study -->
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+      <article class="bg-navy text-cream p-10 md:p-16 relative overflow-hidden">
+        <!-- MCM geometric background accents -->
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full border border-cream/5 translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-mustard/5 -translate-x-1/4 translate-y-1/4"></div>
+
+        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <p class="font-body text-xs tracking-[0.25em] uppercase text-mustard mb-6">Featured / MSP Services Portfolio</p>
+            <h2 class="font-display text-4xl md:text-5xl font-light leading-tight mb-6">
+              From Technical Debt<br/>to 35% Profit Growth
+            </h2>
+            <p class="font-body text-base text-cream/70 leading-relaxed mb-6">
+              A $300,000 monthly recurring revenue service carrying years of undocumented
+              technical debt. No clear ownership. No framework for measuring what "fixed" even
+              looked like. A 9-month engagement that changed all three.
+            </p>
+            <div class="flex gap-3 flex-wrap">
+              {['Technical Debt', 'Services Modernization', 'Profit Recovery', 'Framework Design'].map(tag => (
+                <span class="font-body text-xs px-3 py-1.5 border border-cream/20 text-cream/60 tracking-wide">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            {[
+              { value: '35%', label: 'Profit increase' },
+              { value: '$300K', label: 'Monthly recurring revenue' },
+              { value: '9mo', label: 'Time to results' },
+              { value: '2.5yr', label: 'Full portfolio transformed' },
+            ].map(stat => (
+              <div class="border border-cream/10 p-6">
+                <p class="font-display text-4xl font-light text-mustard mb-1">{stat.value}</p>
+                <p class="font-body text-xs text-cream/50 tracking-wide uppercase">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- The framework -->
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="section-label mb-4">The methodology</p>
+          <h2 class="font-display text-4xl text-navy font-light leading-tight mb-6">
+            The Technical Debt<br/>Mapping Framework
+          </h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            Most technical debt conversations start at the technology layer. Mine start at the
+            human layer — the decisions that created the debt, who owns them now, and what
+            incentives are keeping the debt in place.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            The framework I built creates a complete map of debt across a service:
+            tooling, process, workflow, and organizational. It produces something most organizations
+            have never had — a shared language for what's broken and why.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            Once you have the map, the prioritization becomes obvious. The execution becomes
+            systematic. And the results become measurable.
+          </p>
+        </div>
+
+        <div class="space-y-0">
+          {[
+            {
+              num: '01',
+              title: 'Discovery',
+              body: 'Sit in the service. Not as an auditor — as a participant. Map every process, every handoff, every place where work slows down or disappears.'
+            },
+            {
+              num: '02',
+              title: 'Debt Classification',
+              body: 'Categorize debt by type, age, ownership, and blast radius. Make it visible to everyone — not just engineering, but leadership and customers.'
+            },
+            {
+              num: '03',
+              title: 'Prioritized Elimination',
+              body: 'Work through debt in the order that unlocks the most value — not the order that\'s easiest. Measure results at each stage.'
+            },
+            {
+              num: '04',
+              title: 'Structural Change',
+              body: 'Redesign the processes, teams, and incentives that created the debt in the first place. If you don\'t change the conditions, you\'ll regenerate the same debt.'
+            }
+          ].map(step => (
+            <div class="flex gap-6 py-8 border-b border-cream-dark last:border-0">
+              <span class="font-display text-4xl text-terracotta/30 font-light shrink-0 leading-none mt-1">{step.num}</span>
+              <div>
+                <h3 class="font-body text-sm font-semibold tracking-widest uppercase text-navy mb-2">{step.title}</h3>
+                <p class="font-body text-sm text-charcoal/60 leading-relaxed">{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional work -->
+    <section class="bg-cream-dark/50 border-t border-cream-dark">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <p class="section-label mb-10">Additional work</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'Smaller Services Portfolio',
+              body: 'Applied the same debt-mapping methodology across a group of smaller services following the flagship success. Systematic replication of a proven approach.',
+              tags: ['Portfolio Modernization', 'Process Design']
+            },
+            {
+              title: 'Largest Service Offering',
+              body: 'Extended the framework to the organization\'s largest and most complex service, with a significantly larger scope and cross-functional dependencies.',
+              tags: ['Enterprise-Scale', 'Change Management']
+            },
+            {
+              title: 'Engineering Org Building',
+              body: 'Hired, promoted, and developed engineering teams through periods of significant organizational change. Built teams that continued to perform after my departure.',
+              tags: ['Team Building', 'Leadership Development']
+            }
+          ].map(project => (
+            <div class="bg-cream p-8 border border-cream-dark flex flex-col gap-4">
+              <div class="w-6 h-0.5 bg-sage"></div>
+              <h3 class="font-body text-sm font-semibold tracking-wide uppercase text-navy">{project.title}</h3>
+              <p class="font-body text-sm text-charcoal/60 leading-relaxed flex-1">{project.body}</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                {project.tags.map(tag => (
+                  <span class="font-body text-xs px-2.5 py-1 bg-cream-dark text-charcoal/50 tracking-wide">{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+      <p class="section-label mb-6">What's next</p>
+      <p class="font-display text-3xl text-navy font-light mb-6">
+        Have a problem that doesn't have a name yet?
+      </p>
+      <a
+        href="https://www.linkedin.com/in/bethanyjcurran/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        Let's talk
+      </a>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

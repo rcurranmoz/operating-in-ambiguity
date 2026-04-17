@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  slug: string;
+  date: string;
+  readTime: string;
+  excerpt: string;
+  substackUrl?: string;
+}
+
+const { title, subtitle, slug, date, readTime, excerpt, substackUrl } = Astro.props;
+---
+
+<article class="group border-b border-cream-dark pb-12 last:border-0">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-4">
+      <span class="section-label">{date}</span>
+      <span class="text-charcoal/30 text-xs">·</span>
+      <span class="font-body text-xs text-charcoal/50">{readTime}</span>
+    </div>
+
+    <div>
+      <a href={`/writing/${slug}`} class="block group-hover:text-navy transition-colors">
+        <h2 class="font-display text-3xl md:text-4xl text-navy font-light leading-tight mb-1">
+          {title}
+        </h2>
+        <p class="font-display text-xl text-charcoal/60 italic">{subtitle}</p>
+      </a>
+    </div>
+
+    <p class="font-body text-base text-charcoal/70 leading-relaxed max-w-2xl">
+      {excerpt}
+    </p>
+
+    <div class="flex items-center gap-6 mt-2">
+      <a
+        href={`/writing/${slug}`}
+        class="font-body text-sm text-terracotta tracking-wide hover:text-navy transition-colors flex items-center gap-2"
+      >
+        Read essay
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {substackUrl && (
+        <a
+          href={substackUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-body text-sm text-charcoal/50 tracking-wide hover:text-terracotta transition-colors flex items-center gap-2"
+        >
+          Read on Substack
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
+</article>
