@@ -131,18 +131,23 @@ import Footer from '../components/Footer.astro';
           {[
             {
               title: 'Smaller Services Portfolio',
-              body: 'Applied the same debt-mapping methodology across a group of smaller services following the flagship success. Systematic replication of a proven approach.',
-              tags: ['Portfolio Modernization', 'Process Design']
+              body: 'Applied the same debt-mapping methodology across a group of smaller services following the flagship success. Systematic replication of a proven approach across varied service sizes and team structures.',
+              tags: ['Portfolio Modernization', 'Process Design', 'Framework Replication']
             },
             {
               title: 'Largest Service Offering',
-              body: 'Extended the framework to the organization\'s largest and most complex service, with a significantly larger scope and cross-functional dependencies.',
-              tags: ['Enterprise-Scale', 'Change Management']
+              body: 'Extended the framework to the organization\'s largest and most complex service — significantly larger scope, deeper cross-functional dependencies, and higher organizational resistance to change.',
+              tags: ['Enterprise-Scale', 'Change Management', 'Stakeholder Alignment']
+            },
+            {
+              title: 'Compliance Program Design',
+              body: 'Built and owned compliance programs across SOC 2, SOX, and FedRAMP environments. Embedded compliance into engineering workflows to make governance proactive and scalable rather than reactive and audit-driven.',
+              tags: ['SOC 2', 'SOX', 'FedRAMP', 'Risk Management']
             },
             {
               title: 'Engineering Org Building',
-              body: 'Hired, promoted, and developed engineering teams through periods of significant organizational change. Built teams that continued to perform after my departure.',
-              tags: ['Team Building', 'Leadership Development']
+              body: 'Hired, promoted, and developed engineering teams through periods of significant organizational change. Built teams that continued to perform — and improve — after my departure.',
+              tags: ['Team Building', 'Leadership Development', 'Succession Planning']
             }
           ].map(project => (
             <div class="bg-cream p-8 border border-cream-dark flex flex-col gap-4">
@@ -166,14 +171,22 @@ import Footer from '../components/Footer.astro';
       <p class="font-display text-3xl text-navy font-light mb-6">
         Have a problem that doesn't have a name yet?
       </p>
-      <a
-        href="https://www.linkedin.com/in/bethanyjcurran/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary"
-      >
-        Let's talk
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://www.linkedin.com/in/bethanyjcurran/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Connect on LinkedIn
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="mailto:bethany.curran@icloud.com?subject=Let's talk about a role" class="btn-outline">
+          Send an email
+        </a>
+      </div>
     </div>
   </main>
 

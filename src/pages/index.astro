@@ -53,21 +53,27 @@ import PostCard from '../components/PostCard.astro';
     <!-- Impact stats -->
     <section class="bg-navy text-cream">
       <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
           <div class="text-center sm:text-left">
             <p class="font-display text-5xl md:text-6xl font-light text-mustard mb-2">35%</p>
             <p class="font-body text-sm text-cream/70 leading-relaxed">
               Profit increase in a $300K/mo service<br/>within 9 months of framework deployment
             </p>
           </div>
-          <div class="text-center sm:text-left sm:border-x sm:border-cream/10 sm:px-8">
+          <div class="text-center sm:text-left md:border-l md:border-cream/10 md:pl-8">
+            <p class="font-display text-5xl md:text-6xl font-light text-terracotta mb-2">40%</p>
+            <p class="font-body text-sm text-cream/70 leading-relaxed">
+              Faster incident response<br/>through system observability enhancements
+            </p>
+          </div>
+          <div class="text-center sm:text-left md:border-l md:border-cream/10 md:pl-8">
             <p class="font-display text-5xl md:text-6xl font-light text-sage mb-2">3×</p>
             <p class="font-body text-sm text-cream/70 leading-relaxed">
               Roles written from scratch —<br/>for problems that didn't have titles yet
             </p>
           </div>
-          <div class="text-center sm:text-left">
-            <p class="font-display text-5xl md:text-6xl font-light text-terracotta mb-2">2.5yr</p>
+          <div class="text-center sm:text-left md:border-l md:border-cream/10 md:pl-8">
+            <p class="font-display text-5xl md:text-6xl font-light text-mustard mb-2">2.5yr</p>
             <p class="font-body text-sm text-cream/70 leading-relaxed">
               End-to-end portfolio modernization —<br/>services, teams, and technical debt framework
             </p>
@@ -181,17 +187,25 @@ import PostCard from '../components/PostCard.astro';
           I'm currently exploring my next role in modernization and transformation leadership.
           If you're sitting on a legacy problem that needs a name and a plan, let's talk.
         </p>
-        <a
-          href="https://www.linkedin.com/in/bethanyjcurran/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary"
-        >
-          Connect on LinkedIn
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://www.linkedin.com/in/bethanyjcurran/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Connect on LinkedIn
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a
+            href="mailto:bethany.curran@icloud.com?subject=Let's talk about a role"
+            class="btn-outline"
+          >
+            Send an email
+          </a>
+        </div>
       </div>
     </section>
   </main>
