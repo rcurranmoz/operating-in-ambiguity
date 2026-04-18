@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="Portfolio Access"
+  description="Private portfolio and document library — Bethany J. Curran."
+>
+  <Nav />
+
+  <main class="flex-1">
+    <section class="max-w-sm mx-auto px-6 pt-28 pb-32 text-center">
+
+      <div class="w-14 h-14 mx-auto mb-10 border border-navy/15 flex items-center justify-center">
+        <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
+          <rect x="2" y="10" width="16" height="11" rx="1" stroke="#1C3454" stroke-width="1.5"/>
+          <path d="M6 10V7a4 4 0 0 1 8 0v3" stroke="#1C3454" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <p class="section-label mb-4">Private access</p>
+      <h1 class="font-display text-4xl text-navy font-light leading-tight mb-4">
+        Portfolio &amp; Document Library
+      </h1>
+      <p class="font-body text-sm text-charcoal/50 leading-relaxed mb-12">
+        This area is shared by invitation.<br/>Enter the access word to continue.
+      </p>
+
+      <form id="auth-form" novalidate>
+        <div class="relative mb-2">
+          <input
+            id="pw-input"
+            type="password"
+            placeholder="Access word"
+            autocomplete="off"
+            spellcheck="false"
+            class="w-full font-body text-sm bg-transparent border-b border-navy/25 text-charcoal placeholder:text-charcoal/25 py-3 pr-10 focus:outline-none focus:border-terracotta transition-colors text-center tracking-widest"
+          />
+          <button
+            type="button"
+            id="pw-toggle"
+            aria-label="Show or hide access word"
+            class="absolute right-0 top-1/2 -translate-y-1/2 text-charcoal/25 hover:text-charcoal/50 transition-colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M1 9c0 0 3.5-6 8-6s8 6 8 6-3.5 6-8 6S1 9 1 9z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </button>
+        </div>
+
+        <p id="pw-error" class="hidden font-body text-xs text-terracotta mb-5 tracking-wide text-center">
+          That's not the right word. Try again.
+        </p>
+
+        <div class="h-6"></div>
+
+        <button type="submit" class="btn-primary w-full justify-center">
+          Enter
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<script>
+  const HASH = 'ebf49dcd836f810084c14e0f2dab4dc1768bbdc5980481bf201fcf76771dff7a';
+  const AUTH_KEY = 'oia_auth';
+  const AUTH_VAL = 'nav_ok';
+
+  if (sessionStorage.getItem(AUTH_KEY) === AUTH_VAL) {
+    const dest = new URLSearchParams(location.search).get('from') || '/portfolio';
+    location.replace(dest);
+  }
+
+  async function sha256(str: string): Promise<string> {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  const form = document.getElementById('auth-form') as HTMLFormElement;
+  const input = document.getElementById('pw-input') as HTMLInputElement;
+  const error = document.getElementById('pw-error') as HTMLElement;
+  const toggle = document.getElementById('pw-toggle') as HTMLButtonElement;
+
+  toggle.addEventListener('click', () => {
+    input.type = input.type === 'password' ? 'text' : 'password';
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    error.classList.add('hidden');
+    const hash = await sha256(input.value.toLowerCase().trim());
+    if (hash === HASH) {
+      sessionStorage.setItem(AUTH_KEY, AUTH_VAL);
+      const dest = new URLSearchParams(location.search).get('from') || '/portfolio';
+      location.replace(dest);
+    } else {
+      error.classList.remove('hidden');
+      input.value = '';
+      input.focus();
+    }
+  });
+</script>

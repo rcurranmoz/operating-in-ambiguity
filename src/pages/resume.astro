@@ -1,0 +1,269 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const experience = [
+  {
+    title: 'Director of Services Modernization',
+    org: '[Organization — fill in]',
+    period: '20XX – 20XX',
+    bullets: [
+      'Identified and named an unnamed organizational problem: a $300K/month managed services portfolio carrying undocumented technical debt across tooling, process, workflow, and org structure.',
+      'Built a 4-layer technical debt mapping framework deployed across the full services portfolio over 2.5 years.',
+      'Drove 35% increase in service profitability within 9 months of framework deployment.',
+      'Wrote the role from scratch — the problem didn\'t have a job title before I gave it one.',
+    ],
+  },
+  {
+    title: 'Engineering Leader / Compliance Program Owner',
+    org: '[Organization — fill in]',
+    period: '20XX – 20XX',
+    bullets: [
+      'Owned SOC 2, SOX, and FedRAMP compliance programs across engineering environments.',
+      'Embedded compliance into engineering workflows, reducing audit-prep burden and eliminating reactive scramble.',
+      'Hired, promoted, and developed engineering teams through significant organizational transitions.',
+      'Built leadership pipeline that continued operating and improving after my departure.',
+    ],
+  },
+  {
+    title: '[Earlier Role — fill in]',
+    org: '[Organization — fill in]',
+    period: '20XX – 20XX',
+    bullets: [
+      '[Key achievement — fill in]',
+      '[Key achievement — fill in]',
+    ],
+  },
+];
+
+const competencies = [
+  'Technical Debt Frameworks',
+  'Services Modernization',
+  'Change Leadership',
+  'Compliance Program Design',
+  'Organizational Design',
+  'Leadership Development',
+  'SOC 2 / SOX / FedRAMP',
+  'Stakeholder Alignment',
+  'Framework Design',
+  'Succession Planning',
+];
+
+const stats = [
+  { value: '35%', label: 'Profit increase on $300K/mo service', color: 'text-mustard' },
+  { value: '40%', label: 'Faster incident response', color: 'text-terracotta' },
+  { value: '3×', label: 'Roles written from scratch', color: 'text-sage' },
+  { value: '10+', label: 'Years of experience', color: 'text-mustard' },
+];
+---
+
+<Base
+  title="Resume"
+  description="Bethany J. Curran — Modernization & Transformation Leader. Resume and consulting profile."
+>
+  <Nav />
+
+  <main class="flex-1" id="protected-main" style="visibility: hidden">
+
+    <!-- Hero — mirrors home page structure -->
+    <section class="max-w-6xl mx-auto px-6 pt-20 pb-20 md:pt-28 md:pb-24">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1">
+          <p class="section-label mb-6">Resume &amp; Consulting Profile</p>
+          <h1 class="font-display font-light text-5xl md:text-6xl text-navy leading-[1.05] tracking-tight mb-6">
+            Bethany J. Curran
+          </h1>
+          <p class="font-body text-lg text-charcoal/60 leading-relaxed mb-3">
+            Modernization &amp; Transformation Leader
+          </p>
+          <p class="font-body text-base text-charcoal/60 leading-relaxed max-w-lg mb-10">
+            I identify problems that don't have names yet, build the frameworks to address them, and lead organizations through the change. Available for consulting engagements and fractional leadership.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="mailto:bethany.curran@icloud.com?subject=Consulting inquiry" class="btn-primary">
+              Get in touch
+            </a>
+            <a href="https://www.linkedin.com/in/bethanyjcurran/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2 relative">
+          <div class="absolute -top-4 -right-4 w-48 h-48 rounded-full border border-sage/30 z-0"></div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-mustard/10 z-0"></div>
+          <div class="relative z-10">
+            <img
+              src="/headshot.jpg"
+              alt="Bethany J. Curran"
+              class="w-full max-w-sm mx-auto md:ml-auto object-cover aspect-square rounded-sm shadow-lg"
+            />
+            <div class="absolute bottom-0 left-0 w-1 h-2/3 bg-terracotta rounded-sm -translate-x-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats bar -->
+    <section class="bg-navy text-cream">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+          {stats.map((stat, i) => (
+            <div class:list={['text-center sm:text-left', i > 0 && 'md:border-l md:border-cream/10 md:pl-8']}>
+              <p class:list={['font-display text-5xl md:text-6xl font-light mb-2', stat.color]}>{stat.value}</p>
+              <p class="font-body text-sm text-cream/70 leading-relaxed">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Core competencies -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-3 gap-16 items-start">
+        <div class="md:col-span-1">
+          <p class="section-label mb-4">Core competencies</p>
+          <h2 class="font-display text-3xl text-navy font-light leading-tight">
+            What I bring to the work
+          </h2>
+        </div>
+        <div class="md:col-span-2">
+          <div class="flex flex-wrap gap-3">
+            {competencies.map(c => (
+              <span class="font-body text-sm px-4 py-2 border border-navy/15 text-charcoal/70 tracking-wide">
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-cream-dark"></div>
+        <div class="flex gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-mustard"></span>
+        </div>
+        <div class="flex-1 h-px bg-cream-dark"></div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <p class="section-label mb-12">Experience</p>
+
+      <div class="space-y-0">
+        {experience.map(role => (
+          <div class="grid md:grid-cols-3 gap-6 md:gap-16 py-12 border-b border-cream-dark last:border-0">
+            <div>
+              <p class="font-body text-sm font-semibold text-navy tracking-wide mb-1">{role.title}</p>
+              <p class="font-body text-sm text-charcoal/50 mb-1">{role.org}</p>
+              <p class="font-body text-xs text-charcoal/35 tracking-wide">{role.period}</p>
+            </div>
+            <div class="md:col-span-2">
+              <ul class="space-y-3">
+                {role.bullets.map(b => (
+                  <li class="font-body text-sm text-charcoal/65 leading-relaxed flex gap-3">
+                    <span class="text-terracotta/50 shrink-0 mt-1.5">—</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- How I engage -->
+    <section class="bg-cream-dark/50 border-t border-cream-dark">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <p class="section-label mb-4">How I engage</p>
+            <h2 class="font-display text-3xl md:text-4xl text-navy font-light leading-tight mb-6">
+              Consulting &amp; fractional leadership
+            </h2>
+            <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+              My best work happens when the problem doesn't have a name yet. I embed, I map, I build the framework — and I lead the change. I'm available for consulting engagements and fractional leadership arrangements.
+            </p>
+            <p class="font-body text-base text-charcoal/70 leading-relaxed mb-8">
+              If you're sitting on a legacy system, an unowned problem, or a transformation effort that keeps stalling, that's where I do my best work.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="mailto:bethany.curran@icloud.com?subject=Consulting inquiry" class="btn-primary">
+                Start a conversation
+              </a>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            {[
+              {
+                title: 'Diagnostic Engagements',
+                body: 'Short-term, high-intensity work to map an unowned problem and define the path forward. I find the thing that doesn\'t have a name and give it one.',
+              },
+              {
+                title: 'Fractional Leadership',
+                body: 'Ongoing embedded leadership for organizations that need experienced direction without a full-time hire. I operate as part of the team — not as an external consultant.',
+              },
+              {
+                title: 'Transformation Programs',
+                body: 'End-to-end modernization work: from initial mapping through execution and the structural changes that make results stick.',
+              },
+            ].map(item => (
+              <div>
+                <h3 class="font-body text-sm font-semibold tracking-widest uppercase text-navy mb-2">{item.title}</h3>
+                <p class="font-body text-sm text-charcoal/60 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to portfolio -->
+    <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+      <a href="/portfolio" class="font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors flex items-center gap-2">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Portfolio
+      </a>
+      <button
+        id="lock-btn"
+        class="font-body text-xs tracking-widest uppercase text-charcoal/25 hover:text-charcoal/50 transition-colors flex items-center gap-2"
+      >
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+          <rect x="1" y="6" width="10" height="7.5" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Lock
+      </button>
+    </div>
+
+  </main>
+
+  <Footer />
+</Base>
+
+<script is:inline>
+  (function () {
+    if (sessionStorage.getItem('oia_auth') !== 'nav_ok') {
+      location.replace('/library?from=' + encodeURIComponent(location.pathname));
+    } else {
+      document.getElementById('protected-main').style.visibility = 'visible';
+    }
+  })();
+</script>
+
+<script>
+  document.getElementById('lock-btn')?.addEventListener('click', () => {
+    sessionStorage.removeItem('oia_auth');
+    location.replace('/library');
+  });
+</script>

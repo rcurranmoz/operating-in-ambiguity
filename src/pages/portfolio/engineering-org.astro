@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const tags = ['Organizational Design', 'Leadership Development', 'Succession Planning', 'Change Management'];
+---
+
+<Base title="Building the Team That Outgrows You — Portfolio" description="Case study: Engineering organization building — Bethany J. Curran">
+  <Nav />
+
+  <main class="flex-1" id="protected-main" style="visibility: hidden">
+    <article class="max-w-3xl mx-auto px-6 pt-20 pb-32">
+
+      <a href="/portfolio" class="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors mb-14">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Portfolio
+      </a>
+
+      <p class="section-label mb-4">Case Study · Organizational Design</p>
+      <h1 class="font-display text-4xl md:text-5xl text-navy font-light leading-tight mb-8">
+        Building the Team<br/>That Outgrows You
+      </h1>
+
+      <div class="flex flex-wrap gap-3 mb-14">
+        {tags.map(tag => (
+          <span class="font-body text-xs px-3 py-1.5 border border-navy/15 text-charcoal/50 tracking-wide">{tag}</span>
+        ))}
+      </div>
+
+      <div class="space-y-12">
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Situation</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            Engineering organizations in transition have a common failure mode: the people who built the team stay in place long after the team needs a different kind of leader. Growth stalls. Good people leave. The team that succeeded in phase one becomes the ceiling for phase two.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            The work I do in organization building is oriented toward one outcome: leaving the team in better shape than I found it, with people who don't need me in order to keep improving.
+          </p>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Approach</h2>
+
+          <div class="space-y-0">
+            {[
+              {
+                num: '01',
+                title: 'Hire for the Organization You\'re Building',
+                body: 'Not the one you have. Every hire is a statement about where the team is going. I\'ve built hiring frameworks that identify people with the specific combination of capability and adaptability that a modernizing organization needs — and screened for the qualities that look like strengths in a stable org but become liabilities in a changing one.',
+              },
+              {
+                num: '02',
+                title: 'Invest in the People Already There',
+                body: 'The best signal of a well-run organization is whether the people who were there before you got promoted or grew into larger roles. I\'ve built development programs that created visible paths for engineers to move into leadership — and gave them the actual experiences needed to make that transition real, not ceremonial.',
+              },
+              {
+                num: '03',
+                title: 'Build Resilience Into the Structure',
+                body: 'Teams that collapse when a key person leaves weren\'t built to last. I\'ve deliberately designed team structures, decision-making frameworks, and knowledge-sharing practices that distribute capability across the organization — so no single departure creates a crisis.',
+              },
+              {
+                num: '04',
+                title: 'Lead Through Periods of Change',
+                body: 'Organizational change is when teams most often fracture. I\'ve led engineering teams through significant transitions — product pivots, leadership changes, layoffs, restructuring — in ways that preserved morale, retained key talent, and maintained delivery velocity. The measure of that leadership is how the team performed during the change, not after the dust settled.',
+              },
+            ].map(step => (
+              <div class="flex gap-6 py-8 border-b border-cream-dark last:border-0">
+                <span class="font-display text-4xl text-terracotta/25 font-light shrink-0 leading-none mt-1">{step.num}</span>
+                <div>
+                  <h3 class="font-body text-sm font-semibold tracking-widest uppercase text-navy mb-2">{step.title}</h3>
+                  <p class="font-body text-sm text-charcoal/60 leading-relaxed">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">Results</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            The teams I've built and developed have continued to perform — and improve — after my departure. Engineers I hired have been promoted into leadership roles. Leaders I developed have taken on programs larger than what they started with. The succession worked because it was planned from the beginning.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            This is the specific version of "leaving it better than I found it" that I care most about: not the metrics, not the output, but the people — and their capacity to keep going without me.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="mt-20 pt-10 border-t border-cream-dark flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+        <a href="/portfolio" class="font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+        <a href="/resume" class="btn-outline text-xs py-2 px-6">View resume →</a>
+      </div>
+
+    </article>
+  </main>
+
+  <Footer />
+</Base>
+
+<script is:inline>
+  (function () {
+    if (sessionStorage.getItem('oia_auth') !== 'nav_ok') {
+      location.replace('/library?from=' + encodeURIComponent(location.pathname));
+    } else {
+      document.getElementById('protected-main').style.visibility = 'visible';
+    }
+  })();
+</script>

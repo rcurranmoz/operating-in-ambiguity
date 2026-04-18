@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const steps = [
+  {
+    num: '01',
+    title: 'Embedded Discovery',
+    body: 'Nine weeks inside the service delivery team — not as an auditor, as a participant. Mapped every process, every handoff, every place where work slowed down or disappeared. The goal wasn\'t a report. It was a complete map of debt across four layers: tooling, process, workflow, and organizational.',
+  },
+  {
+    num: '02',
+    title: 'Debt Classification Framework',
+    body: 'Created a taxonomy that made debt visible to every stakeholder — engineers, managers, and customers. Age, ownership, blast radius, interdependencies. This common language became the foundation for every prioritization conversation that followed.',
+  },
+  {
+    num: '03',
+    title: 'Prioritized Elimination',
+    body: 'Worked through debt in the order that unlocked the most value, not the easiest wins. Measured results at each stage and reported in language that resonated with leadership — not just engineering.',
+  },
+  {
+    num: '04',
+    title: 'Structural Redesign',
+    body: 'Changed the processes, team structures, and incentive systems that created the debt in the first place. Leaving those in place would have regenerated the same problems within 18 months.',
+  },
+];
+
+const stats = [
+  { value: '35%', label: 'Profit increase' },
+  { value: '$300K', label: 'Monthly recurring revenue' },
+  { value: '9 mo', label: 'Time to results' },
+  { value: '2.5 yr', label: 'Full portfolio transformed' },
+];
+
+const tags = ['Technical Debt Framework', 'Services Modernization', 'Profit Recovery', 'Change Leadership'];
+---
+
+<Base title="MSP Services Modernization — Portfolio" description="Case study: From Technical Debt to 35% Profit Growth — Bethany J. Curran">
+  <Nav />
+
+  <main class="flex-1" id="protected-main" style="visibility: hidden">
+    <article class="max-w-3xl mx-auto px-6 pt-20 pb-32">
+
+      <a href="/portfolio" class="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors mb-14">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Portfolio
+      </a>
+
+      <p class="section-label mb-4">Case Study · Services Modernization</p>
+      <h1 class="font-display text-4xl md:text-5xl text-navy font-light leading-tight mb-8">
+        From Technical Debt<br/>to 35% Profit Growth
+      </h1>
+
+      <div class="flex flex-wrap gap-3 mb-14">
+        {tags.map(tag => (
+          <span class="font-body text-xs px-3 py-1.5 border border-navy/15 text-charcoal/50 tracking-wide">{tag}</span>
+        ))}
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-0 border border-cream-dark mb-16">
+        {stats.map(stat => (
+          <div class="p-6 border-r border-b border-cream-dark [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r [&:nth-child(3)]:border-b-0 [&:nth-child(4)]:border-r-0 [&:nth-child(4)]:border-b-0 md:[&:nth-child(3)]:border-b md:[&:nth-child(4)]:border-b-0">
+            <p class="font-display text-3xl font-light text-terracotta mb-1">{stat.value}</p>
+            <p class="font-body text-xs text-charcoal/40 tracking-wide uppercase">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="space-y-12">
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Situation</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            A $300,000 monthly recurring revenue managed services portfolio had grown over years of rapid expansion without the infrastructure to support it. The debt wasn't just technical — it was organizational, process-level, and cultural. No single person owned the full picture. No framework existed to measure what "fixed" even meant.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            Leadership knew something was wrong. Customers were starting to feel it. The problem had no name, no owner, and no path forward — until it did.
+          </p>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Problem I Named</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            The company was treating technical debt as a technology problem — something for engineers to resolve in the gaps between deliverables. The real problem was that no one had mapped the full scope of the debt, defined what ownership meant, or established a system for measuring progress.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            This wasn't a backlog problem. It was a visibility and accountability problem wearing a backlog problem's clothes.
+          </p>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Approach</h2>
+          <div class="space-y-0">
+            {steps.map(step => (
+              <div class="flex gap-6 py-8 border-b border-cream-dark last:border-0">
+                <span class="font-display text-4xl text-terracotta/25 font-light shrink-0 leading-none mt-1">{step.num}</span>
+                <div>
+                  <h3 class="font-body text-sm font-semibold tracking-widest uppercase text-navy mb-2">{step.title}</h3>
+                  <p class="font-body text-sm text-charcoal/60 leading-relaxed">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">Results</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            Within 9 months of framework deployment, the flagship service showed a 35% increase in profitability — in a service previously considered structurally challenged. Over the following 2.5 years, the same framework was applied across the full managed services portfolio.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            The framework became a transferable asset. Teams trained on it continued using it after the engagement ended. The methodology — not just the results — replicated successfully across service portfolios of varying sizes and complexity.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            This is the type of outcome I was made for: not a project completed, but a capability built.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="mt-20 pt-10 border-t border-cream-dark flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+        <a href="/portfolio" class="font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+        <a href="/resume" class="btn-outline text-xs py-2 px-6">View resume →</a>
+      </div>
+
+    </article>
+  </main>
+
+  <Footer />
+</Base>
+
+<script is:inline>
+  (function () {
+    if (sessionStorage.getItem('oia_auth') !== 'nav_ok') {
+      location.replace('/library?from=' + encodeURIComponent(location.pathname));
+    } else {
+      document.getElementById('protected-main').style.visibility = 'visible';
+    }
+  })();
+</script>
