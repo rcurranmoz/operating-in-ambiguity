@@ -1,0 +1,130 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const cases = [
+  {
+    slug: 'msp-modernization',
+    title: 'From Technical Debt to 35% Profit Growth',
+    type: 'Services Modernization / Framework Design',
+    hook: 'A $300K/month service carrying years of undocumented debt. No ownership. No measurement framework. Nine months to change all three.',
+    impact: '35% profit increase · 2.5-year portfolio transformation · 4-layer debt framework',
+  },
+  {
+    slug: 'engineering-org',
+    title: 'Building the Team That Outgrows You',
+    type: 'Organizational Design / Leadership Development',
+    hook: 'Hired, promoted, and developed engineering teams through significant organizational change. The measure of success: they got better after I left.',
+    impact: 'Leadership pipeline established · Teams continued improving post-departure',
+  },
+  {
+    slug: 'compliance-program',
+    title: 'Making Compliance Disappear Into the Workflow',
+    type: 'Compliance Program Design / Risk Management',
+    hook: 'Owned SOC 2, SOX, and FedRAMP across engineering environments. Embedded compliance as a feature, not a tax.',
+    impact: 'Three frameworks embedded · Reduced audit-prep burden · Repeatable governance model',
+  },
+];
+---
+
+<Base
+  title="Portfolio"
+  description="Private portfolio and document library — Bethany J. Curran."
+>
+  <Nav />
+
+  <main class="flex-1" id="protected-main" style="visibility: hidden">
+    <header class="max-w-3xl mx-auto px-6 pt-20 pb-14">
+      <p class="section-label mb-4">Document library</p>
+      <h1 class="font-display text-5xl md:text-6xl text-navy font-light leading-tight mb-6">
+        Portfolio
+      </h1>
+      <p class="font-body text-base text-charcoal/60 leading-relaxed max-w-xl">
+        Full case studies and proof artifacts. This library is shared privately.
+      </p>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 mb-20">
+      <div class="space-y-6">
+        {cases.map((c, i) => (
+          <a
+            href={`/portfolio/${c.slug}`}
+            class="group block bg-cream border border-cream-dark hover:border-navy/30 p-8 md:p-10 transition-colors duration-200"
+          >
+            <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+              <span class="font-display text-5xl font-light text-terracotta/20 group-hover:text-terracotta/40 transition-colors shrink-0 leading-none">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div class="flex-1">
+                <p class="font-body text-xs tracking-[0.2em] uppercase text-charcoal/40 mb-3">{c.type}</p>
+                <h2 class="font-display text-2xl md:text-3xl text-navy font-light leading-snug mb-4 group-hover:text-terracotta transition-colors duration-200">
+                  {c.title}
+                </h2>
+                <p class="font-body text-sm text-charcoal/60 leading-relaxed mb-5 max-w-2xl">
+                  {c.hook}
+                </p>
+                <div class="flex items-center justify-between flex-wrap gap-4">
+                  <p class="font-body text-xs text-charcoal/40 tracking-wide">{c.impact}</p>
+                  <span class="font-body text-xs tracking-widest uppercase text-charcoal/40 group-hover:text-terracotta transition-colors">
+                    Read case study →
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Resume callout -->
+    <section class="bg-navy text-cream">
+      <div class="max-w-6xl mx-auto px-6 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div>
+          <p class="font-body text-xs tracking-[0.25em] uppercase text-mustard mb-3">Also in this library</p>
+          <p class="font-display text-3xl font-light leading-snug">
+            Resume &amp; Consulting Profile
+          </p>
+          <p class="font-body text-sm text-cream/60 mt-2 max-w-md">
+            Full background, competencies, and how Bethany engages on consulting work.
+          </p>
+        </div>
+        <a href="/resume" class="btn-primary border border-cream/20 whitespace-nowrap">
+          View resume →
+        </a>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-6 py-8 flex justify-end">
+      <button
+        id="lock-btn"
+        class="font-body text-xs tracking-widest uppercase text-charcoal/25 hover:text-charcoal/50 transition-colors flex items-center gap-2"
+      >
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+          <rect x="1" y="6" width="10" height="7.5" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Lock
+      </button>
+    </div>
+  </main>
+
+  <Footer />
+</Base>
+
+<script is:inline>
+  (function () {
+    if (sessionStorage.getItem('oia_auth') !== 'nav_ok') {
+      location.replace('/library?from=' + encodeURIComponent(location.pathname));
+    } else {
+      document.getElementById('protected-main').style.visibility = 'visible';
+    }
+  })();
+</script>
+
+<script>
+  document.getElementById('lock-btn')?.addEventListener('click', () => {
+    sessionStorage.removeItem('oia_auth');
+    location.replace('/library');
+  });
+</script>

@@ -1,0 +1,134 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const tags = ['SOC 2', 'SOX', 'FedRAMP', 'Compliance Program Design', 'Risk Management'];
+---
+
+<Base title="Compliance Program Design — Portfolio" description="Case study: Making Compliance Disappear Into the Workflow — Bethany J. Curran">
+  <Nav />
+
+  <main class="flex-1" id="protected-main" style="visibility: hidden">
+    <article class="max-w-3xl mx-auto px-6 pt-20 pb-32">
+
+      <a href="/portfolio" class="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors mb-14">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Portfolio
+      </a>
+
+      <p class="section-label mb-4">Case Study · Compliance Program Design</p>
+      <h1 class="font-display text-4xl md:text-5xl text-navy font-light leading-tight mb-8">
+        Making Compliance<br/>Disappear Into the Workflow
+      </h1>
+
+      <div class="flex flex-wrap gap-3 mb-14">
+        {tags.map(tag => (
+          <span class="font-body text-xs px-3 py-1.5 border border-navy/15 text-charcoal/50 tracking-wide">{tag}</span>
+        ))}
+      </div>
+
+      <div class="space-y-12">
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Situation</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            Most engineering organizations treat compliance the same way: as a periodic obligation. Audits happen. People scramble. Evidence is gathered retroactively. The audit passes, and nothing changes until the next one. The system works, technically — until it doesn't, or until it becomes too costly to sustain.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            I owned compliance programs across SOC 2, SOX, and FedRAMP environments. My approach was to make compliance not feel like compliance — by embedding it into the engineering workflow so completely that the evidence collected itself.
+          </p>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Problem I Named</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            Reactive compliance is expensive in two ways. First, the direct cost: engineers spending days assembling evidence, engineers pulled off product work for audit interviews, managers writing documentation that should have existed months earlier. Second, the indirect cost: the organizational anxiety that builds as audit season approaches, the cultural signal that compliance is someone else's job.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            The fix wasn't a better checklist. It was a different model: compliance as a continuous property of how the engineering team worked, not a periodic tax imposed on top of it.
+          </p>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">The Approach</h2>
+
+          <div class="space-y-0">
+            {[
+              {
+                num: '01',
+                title: 'Map Controls to Existing Workflows',
+                body: 'Before changing anything, mapped every required control to the engineering processes already in place. Access reviews, change management, monitoring, incident response — most of the evidence already existed somewhere. The problem was it wasn\'t structured or retained in audit-ready form.',
+              },
+              {
+                num: '02',
+                title: 'Embed Evidence Collection at the Source',
+                body: 'Worked with engineering teams to restructure the tooling and processes they were already using — not add new ones — so that compliance evidence was generated automatically as a side effect of normal work. PR reviews, deploy logs, access provisioning flows: each became a compliance artifact without additional effort.',
+              },
+              {
+                num: '03',
+                title: 'Train for Understanding, Not Compliance Theater',
+                body: 'Engineers who understand why a control exists will maintain it. Engineers who just know what to click will find ways around it when it becomes inconvenient. I built training programs that explained the risk model behind each requirement — so compliance became something the team owned, not something done to them.',
+              },
+              {
+                num: '04',
+                title: 'Build the Governance Cadence',
+                body: 'Established recurring reviews, ownership structures, and escalation paths that made continuous compliance sustainable — not dependent on heroics or a single point of failure. When I left, the programs continued because the infrastructure existed to run them without me.',
+              },
+            ].map(step => (
+              <div class="flex gap-6 py-8 border-b border-cream-dark last:border-0">
+                <span class="font-display text-4xl text-terracotta/25 font-light shrink-0 leading-none mt-1">{step.num}</span>
+                <div>
+                  <h3 class="font-body text-sm font-semibold tracking-widest uppercase text-navy mb-2">{step.title}</h3>
+                  <p class="font-body text-sm text-charcoal/60 leading-relaxed">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div class="w-full h-px bg-cream-dark"></div>
+
+        <section>
+          <h2 class="font-body text-xs tracking-[0.25em] uppercase text-terracotta mb-5">Results</h2>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
+            Compliance programs across SOC 2, SOX, and FedRAMP passed audits and continued operating without the scramble. Audit-prep time dropped significantly because most evidence existed in real time, not retroactively. The engineering team's relationship with compliance shifted from adversarial to matter-of-fact.
+          </p>
+          <p class="font-body text-base text-charcoal/70 leading-relaxed">
+            More importantly: the programs survived transitions. When team composition changed, the processes kept running — because they were embedded in the workflow, not in anyone's head.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="mt-20 pt-10 border-t border-cream-dark flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+        <a href="/portfolio" class="font-body text-xs tracking-widest uppercase text-charcoal/40 hover:text-terracotta transition-colors flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M2 7L6 3M2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All case studies
+        </a>
+        <a href="/resume" class="btn-outline text-xs py-2 px-6">View resume →</a>
+      </div>
+
+    </article>
+  </main>
+
+  <Footer />
+</Base>
+
+<script is:inline>
+  (function () {
+    if (sessionStorage.getItem('oia_auth') !== 'nav_ok') {
+      location.replace('/library?from=' + encodeURIComponent(location.pathname));
+    } else {
+      document.getElementById('protected-main').style.visibility = 'visible';
+    }
+  })();
+</script>
