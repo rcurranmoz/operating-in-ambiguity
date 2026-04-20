@@ -22,12 +22,7 @@ const isPortfolioActive =
       </li>
       <li>
         <a href="/writing" class:list={['nav-link', { 'text-terracotta': isActive('/writing') }]}>
-          Writing
-        </a>
-      </li>
-      <li>
-        <a href="/work" class:list={['nav-link', { 'text-terracotta': isActive('/work') }]}>
-          Work
+          Essays
         </a>
       </li>
       <li>
@@ -36,19 +31,6 @@ const isPortfolioActive =
           <svg width="10" height="12" viewBox="0 0 10 12" fill="none" class="opacity-40">
             <rect x="1" y="5.5" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
             <path d="M3 5.5V4a2 2 0 0 1 4 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/bethanyjcurran/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary text-xs py-2 px-5"
-        >
-          Connect
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="opacity-70">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </li>
@@ -66,14 +48,8 @@ const isPortfolioActive =
   <div id="mobile-menu" class="hidden md:hidden border-t border-cream-dark bg-cream px-6 py-6">
     <ul class="flex flex-col gap-6">
       <li><a href="/about" class="nav-link">About</a></li>
-      <li><a href="/writing" class="nav-link">Writing</a></li>
-      <li><a href="/work" class="nav-link">Work</a></li>
+      <li><a href="/writing" class="nav-link">Essays</a></li>
       <li><a href="/library" class="nav-link inline-flex items-center gap-1.5">Portfolio <svg width="10" height="12" viewBox="0 0 10 12" fill="none" class="opacity-40"><rect x="1" y="5.5" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 5.5V4a2 2 0 0 1 4 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></li>
-      <li>
-        <a href="https://www.linkedin.com/in/bethanyjcurran/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block text-center">
-          Connect on LinkedIn
-        </a>
-      </li>
     </ul>
   </div>
 </header>
