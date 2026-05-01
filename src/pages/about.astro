@@ -48,26 +48,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </header>
 
-    <!-- Impact stats bar -->
-    <div class="bg-navy">
-      <div class="max-w-6xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: '35%', label: 'Profit increase', sub: '$300K MRR service, 9 months' },
-            { value: '40%', label: 'Faster incident response', sub: 'through observability enhancements' },
-            { value: '3×',  label: 'Roles written', sub: 'from scratch, for unnamed problems' },
-            { value: '2.5yr', label: 'Portfolio transformation', sub: 'end-to-end modernization' },
-          ].map((stat, i) => (
-            <div class={i > 0 ? 'md:border-l md:border-cream/10 md:pl-8' : ''}>
-              <p class="font-display text-4xl font-light text-mustard mb-1">{stat.value}</p>
-              <p class="font-body text-sm text-cream font-medium mb-0.5">{stat.label}</p>
-              <p class="font-body text-xs text-cream/50">{stat.sub}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
     <!-- Story -->
     <section class="max-w-3xl mx-auto px-6 py-20">
       <div class="prose prose-oia max-w-none">
@@ -79,106 +59,24 @@ import Footer from '../components/Footer.astro';
         </p>
 
         <p>
-          Three times in my career, I've walked into an organization with an ill-defined problem,
-          sat in the work long enough to understand it, and written a job description that didn't exist
-          before I got there. That's not a tactic. It's just what happens when you pay closer attention
-          to what's broken than to what your title says.
-        </p>
-
-        <p>
-          Most recently, I spent two and a half years modernizing an entire portfolio of technology services
-          at a large MSP. I built a framework to fully map and address technical debt — then applied it to
-          a $300K monthly recurring revenue service, producing a 35% profit increase in nine months.
-          Then I applied the same methodology to the smaller services. Then the largest.
-        </p>
-
-        <p>
-          My measure of success was the day my teams stopped needing me. I took a week off for my birthday,
-          didn't check my phone once, and came back to silence. The sky didn't fall.
-          That was the signal. My assignment was complete.
+          Most people meet ambiguity and react to it. I do the opposite — step back, map the variables,
+          understand the intent behind the mess, and find a different path to the outcome. That instinct,
+          applied to organizations sitting on unnamed problems, is what kept landing me in rooms where
+          the job I needed didn't exist yet.
         </p>
 
         <p>
           My approach to modernization isn't primarily technical. It's organizational. Legacy systems become
           legacy because of how humans made decisions over time — the shortcuts, the incentives, the things
           no one wrote down. You can't fix the system without understanding the humans inside it.
-          And you can't lead the humans through change without earning their trust first.
         </p>
 
         <p>
-          I'm currently exploring what that next problem looks like — and whose organization I'll help
-          modernize next. If yours has a problem that doesn't have a job title yet, I'd like to hear about it.
+          The work is in the portfolio. The thinking is in the essays. This is just the origin story.
         </p>
       </div>
     </section>
 
-    <!-- Expertise -->
-    <section class="bg-cream-dark/50 border-t border-b border-cream-dark">
-      <div class="max-w-6xl mx-auto px-6 py-20">
-        <p class="section-label mb-10">Areas of expertise</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { title: 'Technical Debt Mapping', body: 'Building frameworks that make invisible debt visible — across tooling, processes, and systems.' },
-            { title: 'Services Modernization', body: 'End-to-end portfolio transformation: architecture, workflow, team, and metrics.' },
-            { title: 'Change Leadership', body: 'Guiding teams through transitions they don\'t see coming — and making it stick.' },
-            { title: 'Organizational Design', body: 'Identifying roles that don\'t exist yet and building the structure around them.' },
-            { title: 'MSP & Services Operations', body: 'Deep background in managed services: recurring revenue, SLAs, client relationships.' },
-            { title: 'Engineering Leadership', body: 'Hiring, developing, and growing engineering teams through periods of significant change.' },
-            { title: 'Compliance & Risk Management', body: 'Designing and owning compliance programs across SOC 2, SOX, and FedRAMP — embedded into engineering workflows, not bolted on.' },
-            { title: 'Cloud & Platform Modernization', body: 'Driving re-platforming, cloud migration, and infrastructure consolidation across distributed systems and enterprise environments.' },
-          ].map(item => (
-            <div class="bg-cream p-6 border border-cream-dark">
-              <div class="w-6 h-0.5 bg-terracotta mb-4"></div>
-              <h3 class="font-body text-sm font-semibold tracking-wide uppercase text-navy mb-3">{item.title}</h3>
-              <p class="font-body text-sm text-charcoal/60 leading-relaxed">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section class="max-w-6xl mx-auto px-6 py-20">
-      <p class="section-label mb-10">Certifications</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { issuer: 'Apple', name: 'Apple Certified Support Professional (ACSP)', issued: 'June 2021' },
-          { issuer: 'Jamf', name: 'Jamf Certified Associate', issued: 'July 2021' },
-        ].map(cert => (
-          <div class="border border-cream-dark p-6 flex gap-5 items-start">
-            <div class="w-0.5 h-10 bg-terracotta shrink-0 mt-1"></div>
-            <div>
-              <p class="font-body text-xs tracking-widest uppercase text-terracotta mb-1">{cert.issuer}</p>
-              <p class="font-body text-sm font-semibold text-navy mb-1">{cert.name}</p>
-              <p class="font-body text-xs text-charcoal/50">Issued {cert.issued}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="max-w-3xl mx-auto px-6 py-20 text-center">
-      <p class="font-display text-3xl text-navy font-light mb-6">
-        Looking for someone who operates well in ambiguity?
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="https://www.linkedin.com/in/bethanyjcurran/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary"
-        >
-          Connect on LinkedIn
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a href="mailto:bethany.curran@icloud.com?subject=Let's talk about a role" class="btn-outline">
-          Send an email
-        </a>
-      </div>
-    </div>
   </main>
 
   <Footer />
