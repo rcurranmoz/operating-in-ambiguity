@@ -2,54 +2,24 @@
 const currentPath = Astro.url.pathname;
 const isActive = (path: string) =>
   path === '/' ? currentPath === '/' : currentPath.startsWith(path);
-const isPortfolioActive =
-  currentPath.startsWith('/portfolio') ||
-  currentPath.startsWith('/resume') ||
-  currentPath.startsWith('/library');
+const isFrameworksActive = currentPath.startsWith('/frameworks');
 ---
 
 <header class="w-full border-b border-cream-dark bg-cream/95 backdrop-blur-sm sticky top-0 z-50">
   <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="/" class="font-display text-xl text-navy tracking-tight hover:text-terracotta transition-colors">
-      Operating in Ambiguity
+    <a href="/" class="block hover:opacity-80 transition-opacity">
+      <img src="/logo.png" alt="Operating in Ambiguity" class="h-10 w-auto" />
     </a>
 
     <ul class="hidden md:flex items-center gap-10">
-      <li>
-        <a href="/about" class:list={['nav-link', { 'text-terracotta': isActive('/about') }]}>
-          About
-        </a>
-      </li>
       <li>
         <a href="/writing" class:list={['nav-link', { 'text-terracotta': isActive('/writing') }]}>
           Writing
         </a>
       </li>
       <li>
-        <a href="/work" class:list={['nav-link', { 'text-terracotta': isActive('/work') }]}>
-          Work
-        </a>
-      </li>
-      <li>
-        <a href="/library" class:list={['nav-link inline-flex items-center gap-1.5', { 'text-terracotta': isPortfolioActive }]}>
-          Portfolio
-          <svg width="10" height="12" viewBox="0 0 10 12" fill="none" class="opacity-40">
-            <rect x="1" y="5.5" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M3 5.5V4a2 2 0 0 1 4 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/bethanyjcurran/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary text-xs py-2 px-5"
-        >
-          Connect
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" class="opacity-70">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <a href="/frameworks" class:list={['nav-link', { 'text-terracotta': isFrameworksActive }]}>
+          Frameworks
         </a>
       </li>
     </ul>
@@ -65,15 +35,8 @@ const isPortfolioActive =
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-cream-dark bg-cream px-6 py-6">
     <ul class="flex flex-col gap-6">
-      <li><a href="/about" class="nav-link">About</a></li>
       <li><a href="/writing" class="nav-link">Writing</a></li>
-      <li><a href="/work" class="nav-link">Work</a></li>
-      <li><a href="/library" class="nav-link inline-flex items-center gap-1.5">Portfolio <svg width="10" height="12" viewBox="0 0 10 12" fill="none" class="opacity-40"><rect x="1" y="5.5" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 5.5V4a2 2 0 0 1 4 0v1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a></li>
-      <li>
-        <a href="https://www.linkedin.com/in/bethanyjcurran/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block text-center">
-          Connect on LinkedIn
-        </a>
-      </li>
+      <li><a href="/frameworks" class="nav-link">Frameworks</a></li>
     </ul>
   </div>
 </header>

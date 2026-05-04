@@ -2,212 +2,122 @@
 import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import PostCard from '../components/PostCard.astro';
 ---
 
 <Base>
   <Nav />
 
   <main class="flex-1">
+
     <!-- Hero -->
-    <section class="max-w-6xl mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <!-- Text -->
-        <div class="order-2 md:order-1">
-          <p class="section-label mb-6">Modernization & Transformation Leader</p>
-
-          <h1 class="font-display font-light text-5xl md:text-6xl lg:text-7xl text-navy leading-[1.05] tracking-tight mb-8">
-            I write job descriptions<br/>
-            <em class="text-terracotta not-italic">for problems that<br/>don't have titles yet.</em>
-          </h1>
-
-          <p class="font-body text-lg text-charcoal/70 leading-relaxed max-w-lg mb-10">
-            Three times I've walked into an organization, identified a problem no one had named,
-            and built the role to solve it. Twice, I solved my way out of a job. On purpose.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/work" class="btn-primary">See the work</a>
-            <a href="/writing" class="btn-outline">Read the essays</a>
-          </div>
-        </div>
-
-        <!-- Photo -->
-        <div class="order-1 md:order-2 relative">
-          <!-- MCM geometric frame -->
-          <div class="absolute -top-4 -right-4 w-48 h-48 rounded-full border border-sage/30 z-0"></div>
-          <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-mustard/10 z-0"></div>
-          <div class="relative z-10">
-            <img
-              src="/headshot.jpg"
-              alt="Bethany J. Curran"
-              class="w-full max-w-sm mx-auto md:ml-auto object-cover aspect-square rounded-sm shadow-lg"
-            />
-            <!-- Terracotta accent bar -->
-            <div class="absolute bottom-0 left-0 w-1 h-2/3 bg-terracotta rounded-sm -translate-x-3"></div>
-          </div>
-        </div>
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24">
+      <div class="flex flex-col items-center text-center mb-16">
+        <img
+          src="/logo.png"
+          alt="Operating in Ambiguity"
+          class="w-full max-w-md md:max-w-lg mb-10"
+        />
       </div>
-    </section>
 
-    <!-- Impact stats -->
-    <section class="bg-navy text-cream">
-      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
-          <div class="text-center sm:text-left">
-            <p class="font-display text-5xl md:text-6xl font-light text-mustard mb-2">35%</p>
-            <p class="font-body text-sm text-cream/70 leading-relaxed">
-              Profit increase in a $300K/mo service<br/>within 9 months of framework deployment
-            </p>
-          </div>
-          <div class="text-center sm:text-left md:border-l md:border-cream/10 md:pl-8">
-            <p class="font-display text-5xl md:text-6xl font-light text-terracotta mb-2">40%</p>
-            <p class="font-body text-sm text-cream/70 leading-relaxed">
-              Faster incident response<br/>through system observability enhancements
-            </p>
-          </div>
-          <div class="text-center sm:text-left md:border-l md:border-cream/10 md:pl-8">
-            <p class="font-display text-5xl md:text-6xl font-light text-sage mb-2">3×</p>
-            <p class="font-body text-sm text-cream/70 leading-relaxed">
-              Roles written from scratch —<br/>for problems that didn't have titles yet
-            </p>
-          </div>
-          <div class="text-center sm:text-left md:border-l md:border-cream/10 md:pl-8">
-            <p class="font-display text-5xl md:text-6xl font-light text-mustard mb-2">2.5yr</p>
-            <p class="font-body text-sm text-cream/70 leading-relaxed">
-              End-to-end portfolio modernization —<br/>services, teams, and technical debt framework
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What I do -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
       <div class="grid md:grid-cols-2 gap-16 items-start">
+
+        <!-- Quirky summary (copy TBD from Bethany) -->
         <div>
-          <p class="section-label mb-4">The work</p>
-          <h2 class="font-display text-4xl md:text-5xl text-navy font-light leading-tight mb-6">
-            Modernization isn't about<br/>
-            <em>how much AI you throw at it.</em>
-          </h2>
-          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-4">
-            It's about understanding how legacy systems became legacy in the first place —
-            the decisions, the debt, the people, the incentives.
+          <p class="font-body text-lg text-charcoal/50 leading-relaxed italic">
+            Quirky 2–3 sentence summary about the purpose of this page. TBD.
           </p>
-          <p class="font-body text-base text-charcoal/70 leading-relaxed mb-8">
-            I build frameworks that make that visible, then systematically address it in a way
-            that actually sticks. Not because of the technology, but because of how humans
-            were led through the change.
-          </p>
-          <a href="/work" class="btn-outline">View case studies</a>
         </div>
 
-        <div class="space-y-8">
-          {[
-            {
-              label: '01',
-              title: 'Technical Debt Frameworks',
-              body: 'Mapping the full scope of debt before a single line changes. Making the invisible visible — for engineers, for leadership, for customers.'
-            },
-            {
-              label: '02',
-              title: 'Services Modernization',
-              body: 'End-to-end portfolio transformation. Not just the tooling — the processes, the workflows, the team structures, and the metrics that tell you if it worked.'
-            },
-            {
-              label: '03',
-              title: 'Change Leadership',
-              body: 'The hardest part of any modernization is the humans. I\'ve led teams through transitions they didn\'t know were happening until they were already on the other side.'
-            }
-          ].map(item => (
-            <div class="flex gap-6">
-              <span class="font-display text-3xl text-terracotta/40 font-light leading-none mt-1 shrink-0">{item.label}</span>
-              <div>
-                <h3 class="font-body text-sm font-600 tracking-widest uppercase text-navy mb-2">{item.title}</h3>
-                <p class="font-body text-sm text-charcoal/60 leading-relaxed">{item.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Divider -->
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-4">
-        <div class="flex-1 h-px bg-cream-dark"></div>
-        <div class="flex gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
-          <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
-          <span class="w-1.5 h-1.5 rounded-full bg-mustard"></span>
-        </div>
-        <div class="flex-1 h-px bg-cream-dark"></div>
-      </div>
-    </div>
-
-    <!-- Latest writing -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-      <div class="flex items-end justify-between mb-14">
-        <div>
-          <p class="section-label mb-3">Writing</p>
-          <h2 class="font-display text-4xl md:text-5xl text-navy font-light">The essays</h2>
-        </div>
-        <a href="/writing" class="nav-link hidden sm:block">All writing →</a>
-      </div>
-
-      <div class="space-y-0">
-        <PostCard
-          title="The Unforeseen Ghost"
-          subtitle="An Evolution of Layoffs"
-          slug="the-unforeseen-ghost"
-          date="April 2026"
-          readTime="10 min read"
-          excerpt="In generations before us, being laid off was a dig at our egos. For millennials in 2026, the ghost is familiar — but we still weren't ready for the reality of living with it."
-        />
-        <PostCard
-          title="The Foreseen Ghost"
-          subtitle="Laid Off by Design"
-          slug="the-foreseen-ghost"
-          date="April 2026"
-          readTime="8 min read"
-          excerpt="The second time the ghost came for me, I knew it was over my shoulder. What happens when you engineer your own exit — and the measure of success is no longer being needed?"
-        />
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="bg-cream-dark/50 border-t border-cream-dark">
-      <div class="max-w-3xl mx-auto px-6 py-24 text-center">
-        <p class="section-label mb-6">What's next</p>
-        <h2 class="font-display text-4xl md:text-5xl text-navy font-light leading-tight mb-6">
-          Looking for someone who can find<br/>the problem before you name it?
-        </h2>
-        <p class="font-body text-base text-charcoal/60 leading-relaxed mb-10 max-w-lg mx-auto">
-          I'm currently exploring my next role in modernization and transformation leadership.
-          If you're sitting on a legacy problem that needs a name and a plan, let's talk.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <!-- Contact / Substack -->
+        <div class="flex flex-col items-start gap-5">
           <a
-            href="https://www.linkedin.com/in/bethanyjcurran/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:bethany.curran@icloud.com?subject=Hello"
             class="btn-primary"
           >
-            Connect on LinkedIn
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            Contact Me
           </a>
           <a
-            href="mailto:bethany.curran@icloud.com?subject=Let's talk about a role"
-            class="btn-outline"
+            href="https://operatinginambiguity.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-body text-sm text-charcoal/50 hover:text-terracotta transition-colors"
           >
-            Send an email
+            Follow on Substack
           </a>
         </div>
+
       </div>
     </section>
+
+    <!-- Featured Essays -->
+    <section class="max-w-6xl mx-auto px-6 pb-24">
+      <p class="section-label mb-10">Featured Essays</p>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="border border-cream-dark p-8 flex flex-col gap-5">
+          <div>
+            <p class="font-body text-xs font-semibold tracking-widest uppercase text-navy mb-1">The Foreseen Ghost</p>
+            <p class="font-body text-sm text-charcoal/60">Laid Off by Design</p>
+          </div>
+          <p class="font-body text-sm text-charcoal/70 leading-relaxed flex-1">
+            What happens when you engineer your own exit — and the measure of success is no longer being needed?
+          </p>
+          <a href="/writing/the-foreseen-ghost" class="nav-link text-sm">read more...</a>
+        </div>
+
+        <div class="border border-cream-dark p-8 flex flex-col gap-5">
+          <div>
+            <p class="font-body text-xs font-semibold tracking-widest uppercase text-navy mb-1">The Unforeseen Ghost</p>
+            <p class="font-body text-sm text-charcoal/60">An Evolution of Layoffs</p>
+          </div>
+          <p class="font-body text-sm text-charcoal/70 leading-relaxed flex-1">
+            For millennials in 2026, the ghost is familiar — but we still weren't ready for the reality of living with it.
+          </p>
+          <a href="/writing/the-unforeseen-ghost" class="nav-link text-sm">read more...</a>
+        </div>
+
+        <!-- Placeholder for third essay -->
+        <div class="border border-dashed border-cream-dark p-8 flex flex-col gap-5 opacity-40">
+          <div>
+            <p class="font-body text-xs font-semibold tracking-widest uppercase text-navy mb-1">Coming Soon</p>
+            <p class="font-body text-sm text-charcoal/60">Essay in progress</p>
+          </div>
+          <p class="font-body text-sm text-charcoal/70 leading-relaxed flex-1">&nbsp;</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Works -->
+    <section class="max-w-6xl mx-auto px-6 pb-24">
+      <p class="section-label mb-10">Featured Works</p>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="border border-cream-dark p-8 flex flex-col gap-5">
+          <div>
+            <p class="font-body text-xs font-semibold tracking-widest uppercase text-navy mb-1">Case Study</p>
+            <p class="font-body text-sm text-charcoal/60">MSP Modernization</p>
+          </div>
+          <p class="font-body text-sm text-charcoal/70 leading-relaxed flex-1">
+            35% profit increase in 9 months through end-to-end portfolio transformation — services, teams, and a technical debt framework built from scratch.
+          </p>
+          <a href="/library" class="nav-link text-sm">read more...</a>
+        </div>
+
+        <div class="border border-cream-dark p-8 flex flex-col gap-5">
+          <div>
+            <p class="font-body text-xs font-semibold tracking-widest uppercase text-navy mb-1">Experience Story</p>
+            <p class="font-body text-sm text-charcoal/60">Building an Engineering Organization</p>
+          </div>
+          <p class="font-body text-sm text-charcoal/70 leading-relaxed flex-1">
+            What it takes to build a high-performing engineering team from the ground up — hiring, culture, and the leadership decisions that compound over time.
+          </p>
+          <a href="/library" class="nav-link text-sm">read more...</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <Footer />
